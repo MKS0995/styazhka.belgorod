@@ -78,9 +78,29 @@
       overflow-x: hidden;
     }
 
+    /* ── TOPBAR ── */
+    .topbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 101;
+      background: var(--accent);
+      padding: 6px 48px;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .topbar-text {
+      font-size: .82rem; font-weight: 700; color: #0f0e0c;
+      letter-spacing: 1px; text-transform: uppercase;
+    }
+    .topbar-price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.05rem; color: #0f0e0c; letter-spacing: 1px;
+    }
+    @media (max-width: 768px) {
+      .topbar { padding: 6px 16px; }
+      .topbar-text { font-size: .75rem; }
+    }
+
     /* ── NAV ── */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      position: fixed; top: 32px; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 18px 48px;
       background: rgba(15,14,12,.88);
@@ -183,6 +203,54 @@
     .section-tag { font-size: .75rem; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
     .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 5vw, 3.5rem); line-height: 1; margin-bottom: 24px; }
     .section-desc { color: var(--muted); line-height: 1.75; max-width: 580px; font-size: 1rem; }
+
+    /* ── ABOUT ── */
+    .about { background: var(--bg); }
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-top: 48px;
+    }
+    .about-text p {
+      color: var(--muted); line-height: 1.85; font-size: 1rem; margin-bottom: 20px;
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-perks {
+      display: flex; flex-direction: column; gap: 16px;
+      margin-top: 32px;
+    }
+    .about-perk {
+      display: flex; align-items: flex-start; gap: 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 18px 22px;
+      transition: border-color .25s;
+    }
+    .about-perk:hover { border-color: var(--accent); }
+    .about-perk-icon { font-size: 1.4rem; line-height: 1; margin-top: 2px; }
+    .about-perk-text { font-size: .95rem; color: var(--text); line-height: 1.5; }
+    .about-perk-text strong { color: var(--accent); display: block; margin-bottom: 2px; font-size: .8rem; letter-spacing: 1px; text-transform: uppercase; }
+    .about-stat-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .about-big-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 7vw, 5.5rem);
+      color: var(--accent); line-height: 1;
+    }
+    .about-big-label { color: var(--muted); font-size: .9rem; margin-top: 8px; line-height: 1.5; }
+    .about-divider { width: 40px; height: 2px; background: var(--border); margin: 28px auto; }
+
+    @media (max-width: 768px) {
+      .about-layout { grid-template-columns: 1fr; gap: 40px; }
+    }
 
     /* ── SERVICES ── */
     .services { background: var(--surface); }
@@ -354,10 +422,18 @@
 </head>
 <body>
 
+<!-- TOPBAR -->
+<div class="topbar">
+  <span class="topbar-text">Полусухая стяжка пола в Белгороде —</span>
+  <span class="topbar-price">от 400 ₽/м²</span>
+  <span class="topbar-text">· Замер бесплатно</span>
+</div>
+
 <!-- NAV -->
 <nav>
   <div class="logo">СтяжкаПро</div>
   <div class="nav-links">
+    <a href="#about">О нас</a>
     <a href="#services">Услуги</a>
     <a href="#videos">Видео</a>
     <a href="#contacts">Контакты</a>
@@ -381,13 +457,65 @@
       <div class="stat-label">Объектов сдано</div>
     </div>
     <div>
+      <div class="stat-num">от 400 ₽</div>
+      <div class="stat-label">За м²</div>
+    </div>
+    <div>
       <div class="stat-num">12ч</div>
       <div class="stat-label">До первой ходьбы</div>
     </div>
     <div>
-      <div class="stat-num">2 года</div>
+      <div class="stat-num">3 года</div>
       <div class="stat-label">Гарантия</div>
     </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-tag">Кто мы</div>
+  <div class="section-title">О нас</div>
+  <div class="about-layout">
+
+    <div class="about-text">
+      <p>Мы не приехали в Белгород на сезон. Мы здесь живём — и это меняет отношение к работе.</p>
+      <p>Когда твоё имя знают в городе, делать плохо просто не получается. Поэтому каждый объект — как будто делаем себе. Без скрытых доплат, без исчезновений после аванса, без «ну и так сойдёт».</p>
+      <p>Опытная бригада местных мастеров. За плечами более 150 000 м² по Белгороду и области.</p>
+
+      <div class="about-perks">
+        <div class="about-perk">
+          <div class="about-perk-icon">📍</div>
+          <div class="about-perk-text">
+            <strong>Бесплатный замер</strong>
+            Выезд замерщика в любой район города — без обязательств
+          </div>
+        </div>
+        <div class="about-perk">
+          <div class="about-perk-icon">🛡️</div>
+          <div class="about-perk-text">
+            <strong>Гарантия 3 года</strong>
+            Несём полную ответственность за каждый объект
+          </div>
+        </div>
+        <div class="about-perk">
+          <div class="about-perk-icon">📞</div>
+          <div class="about-perk-text">
+            <strong>Всегда на связи</strong>
+            До, во время и после работы — никуда не пропадаем
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-stat-block">
+      <div class="about-big-num">150 000</div>
+      <div class="about-big-label">м² стяжки выполнено<br>по Белгороду и области</div>
+      <div class="about-divider"></div>
+      <div class="about-big-num">3</div>
+      <div class="about-big-label">года гарантии<br>на все виды работ</div>
+
+    </div>
+
   </div>
 </section>
 
