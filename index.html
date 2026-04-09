@@ -505,7 +505,24 @@
     dotsEl.appendChild(dot);
   });
 
+  // Остановить видео в текущем слайде через postMessage
+  function pauseCurrentVideo() {
+    const iframes = track.querySelectorAll('iframe');
+    const iframe = iframes[current];
+    if (!iframe) return;
+    // Rutube понимает команду pause через postMessage
+    try {
+      iframe.contentWindow.postMessage('{"method":"pause"}', '*');
+    } catch(e) {}
+    // Запасной вариант — перезагрузить src без autoplay
+    // (сохраняем src и переустанавливаем — видео останавливается)
+    const src = iframe.src;
+    iframe.src = '';
+    setTimeout(() => { iframe.src = src; }, 50);
+  }
+
   function goTo(n) {
+    pauseCurrentVideo();          // ← пауза перед сменой слайда
     current = (n + videos.length) % videos.length;
     track.style.transform = `translateX(-${current * 100}%)`;
     document.querySelectorAll('.dot').forEach((d, i) =>
