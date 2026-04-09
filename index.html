@@ -420,34 +420,34 @@
 
   <div class="carousel-dots" id="carousel-dots"></div>
   <div class="carousel-counter" id="carousel-counter"></div>
+
+  <div style="text-align:center; margin-top:28px;">
+    <a href="https://rutube.ru/channel/ВАШ_КАНАЛ/" target="_blank" rel="noopener" class="btn-outline" style="display:inline-flex;align-items:center;gap:10px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.5 10.5l-5 3A.5.5 0 0110 15V9a.5.5 0 01.5-.5l5 3a.5.5 0 010 1z"/></svg>
+      Смотреть все видео на Rutube
+    </a>
+  </div>
 </section>
 
 <!-- CONTACTS -->
 <section class="contacts-section" id="contacts">
   <div class="section-tag">Связаться с нами</div>
   <div class="section-title">Контакты</div>
-  <p class="section-desc">Работаем в Белгороде и области. Позвоните, напишите в ВКонтакте или Telegram — ответим быстро и рассчитаем стоимость бесплатно.</p>
+  <p class="section-desc">Работаем в Белгороде и области. Позвоните или напишите в MAX — ответим быстро и рассчитаем стоимость бесплатно.</p>
   <div class="contacts-cards">
 
-    <a href="tel:+79990000000" class="contact-card">
+    <a href="tel:+79511368123" class="contact-card">
       <div class="contact-icon">📞</div>
       <div class="contact-label">Телефон</div>
-      <div class="contact-value">+7 (999) 000-00-00</div>
+      <div class="contact-value">+7 (951) 136-81-23</div>
       <div class="contact-hint">Пн–Вс, 8:00 – 21:00</div>
     </a>
 
-    <a href="https://vk.com/ВАШ_ЛОГИН" target="_blank" rel="noopener" class="contact-card">
+    <a href="https://max.ru/u/f9LHodD0cOLysBYplQFuIzd90YDNZJQmfd2Bksiyt6dd0fsKokQSNu6ON6M" target="_blank" rel="noopener" class="contact-card">
       <div class="contact-icon">💬</div>
-      <div class="contact-label">ВКонтакте</div>
-      <div class="contact-value">vk.com/styazhkapro</div>
-      <div class="contact-hint">Напишите нам</div>
-    </a>
-
-    <a href="https://t.me/ВАШ_ЛОГИН" target="_blank" rel="noopener" class="contact-card">
-      <div class="contact-icon">✈️</div>
-      <div class="contact-label">Telegram</div>
-      <div class="contact-value">@styazhkapro</div>
-      <div class="contact-hint">Быстрый ответ</div>
+      <div class="contact-label">MAX</div>
+      <div class="contact-value">+7 (951) 136-81-23</div>
+      <div class="contact-hint">Написать в MAX</div>
     </a>
 
   </div>
@@ -457,38 +457,39 @@
 <footer>
   <div class="logo">СтяжкаПро</div>
   <p>© 2025 СтяжкаПро. Все права защищены.</p>
-  <p>Тел: <a href="tel:+79990000000" style="color:var(--accent);text-decoration:none">+7 (999) 000-00-00</a></p>
+  <p>Тел: <a href="tel:+79511368123" style="color:var(--accent);text-decoration:none">+7 (951) 136-81-23</a></p>
 </footer>
 
 <script>
   // ── Видео с Rutube ──────────────────────────────────────────────────
-  // Добавляйте сюда свои видео: id из ссылки https://rutube.ru/video/XXXXXXXX/
+  const RUTUBE_CHANNEL = 'https://rutube.ru/channel/ВАШ_КАНАЛ/'; // ← замените на ссылку вашего канала
+
   const videos = [
-    {
-      id: "a82690e7fe6d03b7f8e0fc3a260b9559",
-      title: "Полусухая стяжка — объект в Белгороде",
-      desc: "Полный цикл работ от подготовки основания до шлифовки"
-    },
-    {
-      id: "d69326d9ba56ceec8dce4aeb284c0aba",
-      title: "Процесс укладки стяжки",
-      desc: "Смотрите как мы работаем на объекте"
-    },
-    {
-      id: "8c794f7213a2f4884afd807d77bd2c61",
-      title: "Выравнивание пола — результат",
-      desc: "Идеально ровная поверхность после нашей работы"
-    },
-    {
-      id: "6a21c801f84d2853d15e7e386df34ec5",
-      title: "Стяжка пола в новостройке",
-      desc: "Быстро и качественно — Белгород"
-    }
+    { id: "a82690e7fe6d03b7f8e0fc3a260b9559" },
+    { id: "d69326d9ba56ceec8dce4aeb284c0aba" },
+    { id: "8c794f7213a2f4884afd807d77bd2c61" },
+    { id: "6a21c801f84d2853d15e7e386df34ec5" }
   ];
 
   function getRutubeEmbedUrl(id) {
-    // Shorts и обычные видео — один и тот же embed
     return `https://rutube.ru/play/embed/${id}`;
+  }
+
+  // Получаем название и описание видео с Rutube API
+  async function fetchVideoMeta(id) {
+    try {
+      const res = await fetch(`https://rutube.ru/api/video/${id}/?format=json`);
+      if (!res.ok) throw new Error();
+      const data = await res.json();
+      return {
+        title: data.title || 'Видео с объекта',
+        desc: data.description
+          ? data.description.slice(0, 100) + (data.description.length > 100 ? '…' : '')
+          : 'Смотрите процесс нашей работы'
+      };
+    } catch {
+      return { title: 'Видео с объекта', desc: 'Смотрите процесс нашей работы' };
+    }
   }
 
   // ── Карусель видео ────────────────────────────────────────────────
@@ -497,45 +498,49 @@
   const counter = document.getElementById('carousel-counter');
   let current = 0;
 
-  // Генерируем карточки
-  videos.forEach((v, i) => {
-    track.innerHTML += `
-      <div class="video-card">
+  // Генерируем карточки с данными из Rutube API
+  async function initCarousel() {
+    for (let i = 0; i < videos.length; i++) {
+      const v = videos[i];
+      const meta = await fetchVideoMeta(v.id);
+
+      const card = document.createElement('div');
+      card.className = 'video-card';
+      card.innerHTML = `
         <div class="video-wrapper">
           <iframe src="${getRutubeEmbedUrl(v.id)}"
             allowfullscreen allow="clipboard-write; autoplay" frameborder="0">
           </iframe>
         </div>
         <div class="video-info">
-          <h4>${v.title}</h4>
-          <p>${v.desc}</p>
-        </div>
-      </div>`;
+          <h4>${meta.title}</h4>
+          <p>${meta.desc}</p>
+        </div>`;
+      track.appendChild(card);
 
-    const dot = document.createElement('button');
-    dot.className = 'dot' + (i === 0 ? ' active' : '');
-    dot.addEventListener('click', () => goTo(i));
-    dotsEl.appendChild(dot);
-  });
+      const dot = document.createElement('button');
+      dot.className = 'dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goTo(i));
+      dotsEl.appendChild(dot);
+    }
+    goTo(0);
+  }
 
   // Остановить видео в текущем слайде через postMessage
   function pauseCurrentVideo() {
     const iframes = track.querySelectorAll('iframe');
     const iframe = iframes[current];
     if (!iframe) return;
-    // Rutube понимает команду pause через postMessage
     try {
       iframe.contentWindow.postMessage('{"method":"pause"}', '*');
     } catch(e) {}
-    // Запасной вариант — перезагрузить src без autoplay
-    // (сохраняем src и переустанавливаем — видео останавливается)
     const src = iframe.src;
     iframe.src = '';
     setTimeout(() => { iframe.src = src; }, 50);
   }
 
   function goTo(n) {
-    pauseCurrentVideo();          // ← пауза перед сменой слайда
+    pauseCurrentVideo();
     current = (n + videos.length) % videos.length;
     track.style.transform = `translateX(-${current * 100}%)`;
     document.querySelectorAll('.dot').forEach((d, i) =>
@@ -554,7 +559,7 @@
     if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
   });
 
-  goTo(0); // инициализация
+  initCarousel();
 
   // ── Плавное появление секций ─────────────────────────────────────
   const observer = new IntersectionObserver(entries => {
