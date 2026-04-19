@@ -22,27 +22,21 @@
                 <price from="true">400</price>
                 <currencyId>RUR</currencyId>
                 <categoryId>101</categoryId>
-                <picture>https://styazhka-belgorod31.ru/belgorod.jpg</picture>
-                <description>Полусухая стяжка пола в Белгороде и области. Фиброармированная стяжка, толщина от 40 мм,
-                    ходить через 12 часов.
-                </description>
+                <picture>https://styazhka-belgorod31.ru/favicon-512.png</picture>
+                <description>Полусухая стяжка пола в Белгороде и области. Фиброармированная стяжка, толщина от 40 мм, ходить через 12 часов.</description>
                 <sales_notes>Цена за м². Замер бесплатно.</sales_notes>
                 <param name="Рейтинг">5</param>
                 <param name="Число отзывов">47</param>
                 <param name="Годы опыта">8</param>
                 <param name="Регион">Белгород, Белгородская область</param>
                 <param name="Конверсия">95</param>
-                <param name="Ссылка на телефон">tel:+79511368123</param>
-                <param name="Ссылка на чат">
-                    https://max.ru/u/f9LHodD0cOLysBYplQFuIzd90YDNZJQmfd2Bksiyt6dd0fsKokQSNu6ON6M
-                </param>
+                <param name="Ссылка на чат">https://max.ru/u/f9LHodD0cOLysBYplQFuIzd90YDNZJQmfd2Bksiyt6dd0fsKokQSNu6ON6M</param>
+                <param name="Ссылка на создание заказа">https://styazhka-belgorod31.ru/#contacts</param>
                 <param name="Исполнитель проверен">true</param>
                 <param name="Организация">true</param>
                 <param name="Выполняется по адресу заказчика">true</param>
                 <param name="Бригада">true</param>
-                <param name="Об исполнителе">Опытная бригада местных мастеров. Более 150 000 м² выполненной стяжки по
-                    Белгороду и области. Замер бесплатно, гарантия 3 года.
-                </param>
+                <param name="Об исполнителе">Опытная бригада местных мастеров. Более 150 000 м² выполненной стяжки по Белгороду и области. Замер бесплатно, гарантия 3 года.</param>
                 <param name="Другая услуга исполнителя - 1">Выравнивание пола под ноль</param>
                 <param name="Другая услуга исполнителя - 2">Ремонт стяжки пола</param>
                 <param name="Другая услуга исполнителя - 3">Стяжка для коммерческих объектов</param>
