@@ -15,14 +15,8 @@
 <category id="101" parentId="11">Ремонт квартир и домов</category>
 </categories>
 
-<sets>
-<set id="s1" url="https://styazhka-belgorod31.ru/">
-<name>Полусухая стяжка пола в Белгороде</name>
-</set>
-</sets>
-
 <offers>
-<offer id="1" set-ids="s1">
+<offer id="1">
 <name>Стяжка Белгород</name>
 <url>https://styazhka-belgorod31.ru/</url>
 <price from="true">400</price>
@@ -49,5 +43,6 @@
 <param name="Другая услуга исполнителя - 4">Гидроизоляция основания</param>
 </offer>
 </offers>
+
 </shop>
 </yml_catalog>
