@@ -1,124 +1,59 @@
-  <?xml version="1.0" encoding="UTF-8"?>
-    <yml_catalog date="2025-04-19">
-    <shop>
-    <name>Стяжка Белгород</name>
-    <company>Стяжка Белгород</company>
-    <url>https://styazhka-belgorod31.ru/</url>
-    <phone>+7-951-136-81-23</phone>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE yml_catalog SYSTEM "shops.dtd">
+<yml_catalog date="2025-04-19">
+<shop>
+<n>Стяжка Белгород</n>
+<company>Стяжка Белгород</company>
+<url>https://styazhka-belgorod31.ru/</url>
 
-    <currencies>
-    <currency id="RUR" rate="1"/>
-    </currencies>
+<currencies>
+<currency id="RUR" rate="1"/>
+</currencies>
 
-    <categories>
-    <category id="1">Полусухая стяжка пола</category>
-    <category id="2" parentId="1">Выравнивание пола</category>
-    <category id="3" parentId="1">Ремонт стяжки</category>
-    <category id="4" parentId="1">Коммерческие объекты</category>
-    <category id="5" parentId="1">Гидроизоляция</category>
-    </categories>
+<categories>
+<category id="1">Исполнитель</category>
+<category id="11" parentId="1">Ремонт и строительство</category>
+<category id="101" parentId="11">Ремонт квартир и домов</category>
+</categories>
 
-    <offers>
+<sets>
+<set id="s1">
+<url>https://styazhka-belgorod31.ru/</url>
+<n>Полусухая стяжка пола в Белгороде</n>
+</set>
+</sets>
 
-  <!-- Услуга 1: Полусухая стяжка -->
-    <offer id="1" type="vendor.model" available="true">
-    <url>https://styazhka-belgorod31.ru/</url>
-    <name>Полусухая стяжка пола в Белгороде</name>
-    <vendor>Стяжка Белгород</vendor>
-    <price>400</price>
-    <currencyId>RUR</currencyId>
-    <categoryId>1</categoryId>
-    <description>
-    Полусухая стяжка пола в Белгороде и Белгородской области от 400 руб/м².
-    Фиброармированная стяжка из цементно-песчаной смеси с минимальным водозатворением.
-    Толщина от 40 мм. Ходить можно уже через 12 часов.
-    Местная бригада, гарантия 3 года, замер бесплатно.
-    Работаем в квартирах, домах, офисах и на коммерческих объектах.
-    </description>
-    <param name="Цена от">400 руб/м²</param>
-    <param name="Гарантия">3 года</param>
-    <param name="Замер">Бесплатно</param>
-    <param name="Срок готовности">Ходить через 12 часов</param>
-    <param name="Регион работ">Белгород и Белгородская область</param>
-    <param name="Опыт">Более 150 000 м² выполнено</param>
-    </offer>
+<offers>
 
-  <!-- Услуга 2: Выравнивание под ноль -->
-    <offer id="2" type="vendor.model" available="true">
-    <url>https://styazhka-belgorod31.ru/</url>
-    <name>Выравнивание пола под ноль в Белгороде</name>
-    <vendor>Стяжка Белгород</vendor>
-    <price>400</price>
-    <currencyId>RUR</currencyId>
-    <categoryId>2</categoryId>
-    <description>
-    Выравнивание пола в Белгороде лазерной нивелировкой.
-    Точное выравнивание поверхности с отклонением не более 2 мм на 1 метр.
-    Идеально под ламинат, плитку, паркет. Замер бесплатно.
-    </description>
-    <param name="Точность">не более 2 мм на 1 метр</param>
-    <param name="Замер">Бесплатно</param>
-    <param name="Гарантия">3 года</param>
-    <param name="Регион работ">Белгород и Белгородская область</param>
-    </offer>
+<offer id="1" available="true">
+<n>Стяжка Белгород</n>
+<url>https://styazhka-belgorod31.ru/</url>
+<price from="true">400</price>
+<currencyId>RUR</currencyId>
+<categoryId>101</categoryId>
+<set-ids>s1</set-ids>
+<picture>https://styazhka-belgorod31.ru/belgorod.jpg</picture>
+<description>Полусухая стяжка пола в Белгороде и Белгородской области. От 400 руб/м². Замер бесплатно. Гарантия 3 года. Местная опытная бригада. Более 150 000 м² выполнено.</description>
+<sales_notes>от 400 руб/м², замер бесплатно</sales_notes>
+<expiry>P3Y</expiry>
+<param name="Рейтинг">5</param>
+<param name="Число отзывов">47</param>
+<param name="Годы опыта">7</param>
+<param name="Регион">Белгород и Белгородская область</param>
+<param name="Конверсия">100</param>
+<param name="Ссылка на телефон">tel:+79511368123</param>
+<param name="Ссылка на чат">https://max.ru/u/f9LHodD0cOLysBYplQFuIzd90YDNZJQmfd2Bksiyt6dd0fsKokQSNu6ON6M</param>
+<param name="Организация">true</param>
+<param name="Бригада">true</param>
+<param name="Выполняется по адресу заказчика">true</param>
+<param name="Исполнитель проверен">true</param>
+<param name="Об исполнителе">Местная опытная бригада из Белгорода. За плечами более 150 000 м² стяжки по Белгороду и области. Работаем без скрытых доплат, гарантия 3 года.</param>
+<param name="Другая услуга исполнителя - 1">Выравнивание пола под ноль</param>
+<param name="Другая услуга исполнителя - 2">Ремонт стяжки пола</param>
+<param name="Другая услуга исполнителя - 3">Гидроизоляция под стяжку</param>
+<param name="Другая услуга исполнителя - 4">Стяжка в коммерческих помещениях</param>
+</offer>
 
-  <!-- Услуга 3: Ремонт стяжки -->
-    <offer id="3" type="vendor.model" available="true">
-    <url>https://styazhka-belgorod31.ru/</url>
-    <name>Ремонт стяжки пола в Белгороде</name>
-    <vendor>Стяжка Белгород</vendor>
-    <price>400</price>
-    <currencyId>RUR</currencyId>
-    <categoryId>3</categoryId>
-    <description>
-  Ремонт стяжки пола в Белгороде: устранение трещин, пустот, сколов.
-    Восстановление прочности старого основания.
-    Диагностика и замер бесплатно. Гарантия на работы 3 года.
-    </description>
-    <param name="Замер">Бесплатно</param>
-    <param name="Гарантия">3 года</param>
-    <param name="Регион работ">Белгород и Белгородская область</param>
-    </offer>
-
-  <!-- Услуга 4: Коммерческие объекты -->
-    <offer id="4" type="vendor.model" available="true">
-    <url>https://styazhka-belgorod31.ru/</url>
-    <name>Стяжка пола в офисах и торговых центрах Белгорода</name>
-    <vendor>Стяжка Белгород</vendor>
-    <price>400</price>
-    <currencyId>RUR</currencyId>
-    <categoryId>4</categoryId>
-    <description>
-    Стяжка пола в офисах, торговых центрах и складах Белгорода.
-    Работаем с большими площадями — от 100 м²/день.
-    Минимальный простой объекта, соблюдение сроков.
-    Замер и расчёт бесплатно. Гарантия 3 года.
-    </description>
-    <param name="Производительность">от 100 м²/день</param>
-    <param name="Замер">Бесплатно</param>
-    <param name="Гарантия">3 года</param>
-    <param name="Регион работ">Белгород и Белгородская область</param>
-    </offer>
-
-  <!-- Услуга 5: Гидроизоляция -->
-    <offer id="5" type="vendor.model" available="true">
-    <url>https://styazhka-belgorod31.ru/</url>
-    <name>Гидроизоляция пола под стяжку в Белгороде</name>
-    <vendor>Стяжка Белгород</vendor>
-    <price>400</price>
-    <currencyId>RUR</currencyId>
-    <categoryId>5</categoryId>
-    <description>
-    Устройство гидроизоляционного слоя перед укладкой стяжки в Белгороде.
-    Выполняем в ванных комнатах, санузлах, кухнях и других влажных зонах.
-    Замер бесплатно. Гарантия 3 года.
-    </description>
-    <param name="Применение">Ванные комнаты, санузлы, влажные зоны</param>
-    <param name="Замер">Бесплатно</param>
-    <param name="Гарантия">3 года</param>
-    <param name="Регион работ">Белгород и Белгородская область</param>
-    </offer>
-
-    </offers>
-    </shop>
-    </yml_catalog>
+</offers>
+</shop>
+</yml_catalog>
